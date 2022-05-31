@@ -1,0 +1,35 @@
+/*Exemplo de uma aplicação que armazena em um vetor c/ 5 idades
+de pessoas que podem ser do sexo masculino e feminino.
+Imprime:A maior idade do grupo; A media das idades;
+Quantidade Mulheres; Quantidade Homens.*/
+
+import java.util.Scanner;
+
+public class Media {
+  public static void main(String args[]) {
+        int[] idade=new int[5], sexo=new int[5];
+        int fem = 0,mas = 0; 
+        int maioridade = 0, somaidade=0;
+        
+        Scanner entrada = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
+            System.out.printf("Entre com a idade da pessoa %d:", (i + 1));
+            idade[i] = entrada.nextInt();
+            System.out.printf("Entre com o sexo da pessoa %d:(1-Mulher ou 2-Homem)", (i + 1));
+            sexo[i] = entrada.nextInt();
+            
+            if(idade[i] > maioridade)
+            {maioridade=idade[i];          
+            }
+            somaidade=somaidade+idade[i];
+            if(sexo[i]==1)
+            {fem++;}
+            if(sexo[i]==2)
+            {mas++;}
+        }
+        System.out.println("A maior idade do grupo:" + maioridade);
+        System.out.println("A media das idades:" + somaidade/5);
+        System.out.println("Quantidade Mulheres" + fem);
+        System.out.println("Quantidade Homens:" + mas);
+    }//fim main
+}// fim classe
